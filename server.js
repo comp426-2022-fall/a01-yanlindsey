@@ -22,7 +22,7 @@ const data = fs.readFile(fileName, 'utf8', (err, data) => {
     return;
   }
   console.log(data);
-});
+
 
 // Define a const `server` as an arrow function using http.createServer. 
 // Use the documentation for the node.js http module. 
@@ -30,15 +30,15 @@ const data = fs.readFile(fileName, 'utf8', (err, data) => {
 // 1. status code 200, 
 // 2. set a header with content type `text/html`, and 
 // 3. end with the data that you are reading in from ./public/index.html.
-const server = http.createServer((req, res) => {
+  const server = http.createServer((req, res) => {
          res.statusCode = 200;
          res.setHeader('Content-Type', 'text/html');
          res.end(data);
-});
-server.listen(port, () => {
+  });
+  server.listen(port, () => {
         console.log(`Server listening on port ${port}`);
+  });
 });
-
 
 
 
